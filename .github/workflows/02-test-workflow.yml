@@ -1,0 +1,23 @@
+name: test-workflow
+on: workflow_dispatch
+
+# By default, all the jobs run in parallel unless you explicitly state that a job needs another job to finish.
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build step
+        run: echo "Running the build"
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test step
+        run: echo "Running the test"
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy step
+        run: echo "Deploying..."
+  
