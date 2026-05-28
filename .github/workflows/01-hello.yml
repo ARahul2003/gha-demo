@@ -1,0 +1,37 @@
+# Name of the workflow
+name: hello-world
+
+# When the workflow is triggered
+# workflow_dispatch -> Manual trigger by user through a button
+on: workflow_dispatch
+
+# By default, each job in a workflow runs in parallel
+jobs:
+
+  # Name of the job
+  hello:
+    # Runner where the job should run
+    runs-on: ubuntu-latest
+    # Steps in the job; steps are run sequentially.
+    steps:
+      - name: print hello step
+        run: echo "Hello World!"
+
+      - name: multiple commands in single step
+        run: |
+          echo "It's a wonderful day"
+          echo "AI will take over the world"
+
+  # Name of the job
+  greetings:
+    # Runner where the job should run
+    runs-on: ubuntu-latest
+    # Steps in the job; steps are run sequentially.
+    steps:
+      - name: print greetings step
+        run: echo "Greetings from GHA!"
+
+      - name: multiple commands in single step
+        run: |
+          echo "Github Actions is easy to learn."
+          echo "Start learning it today!"
