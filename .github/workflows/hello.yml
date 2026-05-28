@@ -1,8 +1,20 @@
+# Name of the workflow
 name: hello-world
+
+# When the workflow is triggered
+# workflow_dispatch -> Manual trigger by user through a button
 on: workflow_dispatch
+
+# By default, each job in a workflow runs in parallel
 jobs:
   hello:
     runs-on: ubuntu-latest
     steps:
-      - name: Print hello
+      - name: print hello
         run: echo "Hello World!"
+
+  greetings:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print greetings
+        run: echo "Greetings from GHA!"
